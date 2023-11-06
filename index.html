@@ -13,7 +13,8 @@
 
     <title>QuizApp</title>
 </head>
-<body>
+
+<body onload="init()">
     <nav class="navbar navBar-color">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">QuizApp</a>
@@ -52,7 +53,7 @@
 
             <div class="question-footer">
               <span>
-                <b>1</b> von <b>5</b> Fragen
+                <b>1</b> von <b id="all-questions">5</b> Fragen
               </span>
 
               <button class="btn btn-color">Nächste Frage</button>
