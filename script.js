@@ -228,7 +228,9 @@ function answer(selection) {
 
     if (selectedQuestionNumber == question['right_answer']) {
         console.log('Richtige Antwort!');
+        document.getElementById(selection).parentNode.classList.add('bg-success');
     }else {
         console.log('Leider falsch...');
+        document.getElementById(selection).parentNode.classList.add('bg-danger');
     }
 }
