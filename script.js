@@ -221,11 +221,7 @@ function showQuestion() {
 
 function answer(selection) {
     let question = questions[currentQuestion];
-    console.log('Selected answer ist', selection);
     let selectedQuestionNumber = selection.slice(-1);
-    console.log('selectedQuestionNumber is ', selectedQuestionNumber);
-    console.log('Current question is', question['right_answer']);
-
 
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
