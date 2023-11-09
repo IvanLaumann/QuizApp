@@ -96,14 +96,6 @@ const questions = [
         "right_answer": 1
     },
     {
-        "question": "Was ist der Zweck des HTML-Elements '?'?",
-        "answer_1": "Um eine Überschrift zu erstellen",
-        "answer_2": "Um eine Verknüpfung zu einer anderen Webseite oder Datei zu erstellen",
-        "answer_3": "Um ein Bild anzuzeigen",
-        "answer_4": "Um eine Tabelle zu erstellen",
-        "right_answer": 2
-    },
-    {
         "question": "Was ist die Funktion von CSS-Pseudoklassen wie ':hover'?",
         "answer_1": "Text in fett anzeigen",
         "answer_2": "Elemente beim Klicken verstecken",
@@ -201,6 +193,8 @@ const questions = [
     }
 ];
 
+let rightQuestions = 0;
+
 let currentQuestion = 0;
 
 function init() {
@@ -214,6 +208,8 @@ function showQuestion() {
     if(currentQuestion >= questions.length){
         document.getElementById('endScreen').style = '';
         document.getElementById('questionBody').style = 'display: none';
+        document.getElementById('result-all-questions').innerHTML = questions.length;
+        document.getElementById('result-right-questions').innerHTML = rightQuestions;
     }else {
     document.getElementById('current-question').innerHTML = currentQuestion + 1;
 
@@ -234,6 +230,7 @@ function answer(selection) {
     if (selectedQuestionNumber == question['right_answer']) {
         console.log('Richtige Antwort!');
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        rightQuestions++;
     }else {
         console.log('Leider falsch...');
         document.getElementById(selection).parentNode.classList.add('bg-danger');
