@@ -211,6 +211,10 @@ function init() {
 
 function showQuestion() {
     let question = questions[currentQuestion];
+    if(currentQuestion >= questions.length){
+        document.getElementById('endScreen').style = '';
+        document.getElementById('questionBody').style = 'display: none';
+    }else {
     document.getElementById('current-question').innerHTML = currentQuestion + 1;
 
     document.getElementById('questiontext').innerHTML = question['question'];
@@ -218,6 +222,7 @@ function showQuestion() {
     document.getElementById('answer_2').innerHTML = question['answer_2'];
     document.getElementById('answer_3').innerHTML = question['answer_3'];
     document.getElementById('answer_4').innerHTML = question['answer_4'];
+    }
 }
 
 function answer(selection) {

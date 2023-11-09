@@ -8,7 +8,7 @@ body {
 }
 
 .card-container {
-    height: 92%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +29,14 @@ body {
     background-color: #E4CCCC !important;
 }
 
+.reply-btn-color {
+    background-color: #E4CCCC !important;
+}
+
+.reply-btn-color:hover {
+    background-color: #d9baba !important;
+}
+
 .answer-card:hover {
     background-color: rgba(0, 0, 0, 0.05);
     cursor: pointer;
@@ -42,3 +50,17 @@ body {
 .bg-success, .bg-danger {
     color: white !important;
 }
+
+.column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.end-screen {
+    background-image: url(img/endScreen.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
