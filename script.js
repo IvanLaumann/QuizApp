@@ -205,19 +205,25 @@ function init() {
 
 function showQuestion() {
     let question = questions[currentQuestion];
-    if(currentQuestion >= questions.length){
+    // Show End Screen
+    if (currentQuestion >= questions.length) {
         document.getElementById('endScreen').style = '';
         document.getElementById('questionBody').style = 'display: none';
         document.getElementById('result-all-questions').innerHTML = questions.length;
         document.getElementById('result-right-questions').innerHTML = rightQuestions;
-    }else {
-    document.getElementById('current-question').innerHTML = currentQuestion + 1;
+    } else { // Show question
 
-    document.getElementById('questiontext').innerHTML = question['question'];
-    document.getElementById('answer_1').innerHTML = question['answer_1'];
-    document.getElementById('answer_2').innerHTML = question['answer_2'];
-    document.getElementById('answer_3').innerHTML = question['answer_3'];
-    document.getElementById('answer_4').innerHTML = question['answer_4'];
+        let percent = Math.round(currentQuestion / questions.length * 100);
+        document.getElementById('progress-bar').innerHTML = `${percent}%`;
+        document.getElementById('progress-bar').style.width = `${percent}%`;
+        console.log('Fortschritt: ', percent);
+
+        document.getElementById('current-question').innerHTML = currentQuestion + 1;
+        document.getElementById('questiontext').innerHTML = question['question'];
+        document.getElementById('answer_1').innerHTML = question['answer_1'];
+        document.getElementById('answer_2').innerHTML = question['answer_2'];
+        document.getElementById('answer_3').innerHTML = question['answer_3'];
+        document.getElementById('answer_4').innerHTML = question['answer_4'];
     }
 }
 
@@ -231,7 +237,7 @@ function answer(selection) {
         console.log('Richtige Antwort!');
         document.getElementById(selection).parentNode.classList.add('bg-success');
         rightQuestions++;
-    }else {
+    } else {
         console.log('Leider falsch...');
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');

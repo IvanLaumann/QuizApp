@@ -51,6 +51,10 @@ body {
     color: white !important;
 }
 
+.bg-progress-bar {
+    background-color: rgba(166, 165, 250) !important;
+}
+
 .column-center {
     display: flex;
     flex-direction: column;
