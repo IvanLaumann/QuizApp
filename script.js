@@ -239,10 +239,12 @@ function answer(selection) {
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
         rightQuestions++;
+        document.querySelector(".answer-btn").parentElement.style.pointerEvents = 'none';
         AUDIO_SUCCESS.play();
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        document.querySelector(".answer-btn").parentElement.style.pointerEvents = 'none';
         AUDIO_FAIL.play();
     }
     document.getElementById('next-button').disabled = false;
@@ -254,6 +256,7 @@ function nextQuestion() {
     AUDIO_SUCCESS.pause();
     AUDIO_SUCCESS.currentTime = 0;
     currentQuestion++;
+    document.querySelector(".answer-btn").parentElement.style.pointerEvents = '';
     document.getElementById('next-button').disabled = true;
     resetAnswerButtons();
     showQuestion();
