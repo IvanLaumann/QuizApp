@@ -196,6 +196,10 @@ const questions = [
 let rightQuestions = 0;
 let currentQuestion = 0;
 
+let AUDIO_SUCCESS = new Audio('audio/success.mp3');
+let AUDIO_FAIL = new Audio('audio/fail.mp3');
+let AUDIO_END = new Audio('audio/end.mp3');
+
 function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
 
@@ -210,6 +214,7 @@ function showQuestion() {
         document.getElementById('questionBody').style = 'display: none';
         document.getElementById('result-all-questions').innerHTML = questions.length;
         document.getElementById('result-right-questions').innerHTML = rightQuestions;
+        AUDIO_END.play();
     } else { // Show question
         let percent = Math.round(currentQuestion / questions.length * 100);
         document.getElementById('progress-bar').innerHTML = `${percent}%`;
@@ -234,14 +239,20 @@ function answer(selection) {
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
         rightQuestions++;
+        AUDIO_SUCCESS.play();
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        AUDIO_FAIL.play();
     }
     document.getElementById('next-button').disabled = false;
 }
 
 function nextQuestion() {
+    AUDIO_FAIL.pause();
+    AUDIO_FAIL.currentTime = 0;
+    AUDIO_SUCCESS.pause();
+    AUDIO_SUCCESS.currentTime = 0;
     currentQuestion++;
     document.getElementById('next-button').disabled = true;
     resetAnswerButtons();
