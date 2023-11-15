@@ -234,11 +234,9 @@ function answer(selection) {
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
     if (selectedQuestionNumber == question['right_answer']) {
-        console.log('Richtige Antwort!');
         document.getElementById(selection).parentNode.classList.add('bg-success');
         rightQuestions++;
     } else {
-        console.log('Leider falsch...');
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
