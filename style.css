@@ -1,6 +1,6 @@
 body {
-    height: 100vh;
     background-color: #EEDCDC !important;
+    margin: 0;
 }
 
 .navBar-color {
@@ -8,7 +8,6 @@ body {
 }
 
 .card-container {
-    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
