@@ -194,7 +194,6 @@ const questions = [
 ];
 
 let rightQuestions = 0;
-
 let currentQuestion = 0;
 
 function init() {
@@ -212,7 +211,6 @@ function showQuestion() {
         document.getElementById('result-all-questions').innerHTML = questions.length;
         document.getElementById('result-right-questions').innerHTML = rightQuestions;
     } else { // Show question
-
         let percent = Math.round(currentQuestion / questions.length * 100);
         document.getElementById('progress-bar').innerHTML = `${percent}%`;
         document.getElementById('progress-bar').style.width = `${percent}%`;
@@ -259,4 +257,12 @@ function resetAnswerButtons() {
     document.getElementById('answer_3').parentNode.classList.remove('bg-success');
     document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
     document.getElementById('answer_4').parentNode.classList.remove('bg-success');
+}
+
+function restartGame() {
+    document.getElementById('endScreen').style = 'display: none';
+    document.getElementById('questionBody').style = '';
+    rightQuestions = 0;
+    currentQuestion = 0;
+    init();
 }
