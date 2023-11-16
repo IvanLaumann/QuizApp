@@ -160,22 +160,6 @@ const questions = [
         "right_answer": 2
     },
     {
-        "question": "Welche Methode wird in JavaScript verwendet, um einen Wert in eine ganze Zahl (Integer) umzuwandeln?",
-        "answer_1": "parseInt()",
-        "answer_2": "convertToInteger()",
-        "answer_3": "toFloat()",
-        "answer_4": "roundNumber()",
-        "right_answer": 1
-    },
-    {
-        "question": "Was ist der Unterschied zwischen '==' und '===' in JavaScript?",
-        "answer_1": "Es gibt keinen Unterschied, sie sind austauschbar.",
-        "answer_2": "'==' vergleicht den Wert, '===' vergleicht den Wert und den Datentyp.",
-        "answer_3": "'==' vergleicht den Datentyp, '===' vergleicht den Wert.",
-        "answer_4": "'===' ist veraltet und sollte nicht verwendet werden.",
-        "right_answer": 2
-    },
-    {
         "question": "Was ist ein 'Callback' in JavaScript?",
         "answer_1": "Ein besonderes HTML-Element",
         "answer_2": "Eine Art von Kommentar im Code",
