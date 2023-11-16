@@ -1,6 +1,11 @@
 body {
     background-color: #EEDCDC !important;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.roboto-font {
+    font-family: 'Roboto', sans-serif;
 }
 
 .navBar-color {
